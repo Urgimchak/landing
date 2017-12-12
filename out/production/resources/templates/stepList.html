@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Person List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Person List</h1>
+<a href="newStep">Новый ход</a>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Высота</th>
+            <th>Расход топлива</th>
+            <th>Остаток топлива</th>
+            <th>Скорость</th>
+        </tr>
+        <tr th:each ="step : ${steps}">
+            <td th:utext="${step.ID}">...</td>
+            <td th:utext="${step.altitude}">...</td>
+            <td th:utext="${step.fuelConsump}">...</td>
+            <td th:utext="${step.fuelBalance}">...</td>
+            <td th:utext="${step.speed}">...</td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

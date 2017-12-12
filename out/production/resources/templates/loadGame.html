@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Gamer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Введите данные игры:</h1>
+
+<!--
+   In Thymeleaf the equivalent of
+   JSP's ${pageContext.request.contextPath}/edit.html
+   would be @{/edit.html}
+   -->
+
+<form th:action="@{/loadGame}"
+      th:object="${gamerForm}" method="POST">
+    Введите ID:
+    <input type="text" th:field="*{ID}" />
+    <br/>
+    Введите номер хода:
+    <input type="number" th:field="*{stepNumber}" />
+    <br/>
+    <input type="submit" value="Ok" />
+</form>
+
+
+<br/>
+<!-- Check if errorMessage is not null and not empty -->
+</body>
+</html>
